@@ -9,6 +9,50 @@
       type="image/icon type"
     />
     <title>myVourseCille</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body class="myVourseCille-body">
+    <header class="myVourseCille-logo">
+      <img
+        src="../images/myVourseCille-logo.png"
+        class="myVourseCille-logo-img"
+      />
+    </header>
+    <main class="myVourseCille-main">
+      <input type="checkbox" id="check" />
+      <div class="myVourseCille-login myVourseCille-form">
+        <header>Login</header>
+        <form action="#">
+          <input type="text" placeholder="Enter your email" />
+          <input type="password" placeholder="Enter your password" />
+          <input type="button" class="button" value="Login" />
+        </form>
+        <div class="myVourseCille-form-footer">
+          <span class="signup"
+            >Don't have an account?
+            <label for="check">Sign Up</label>
+          </span>
+        </div>
+      </div>
+      <div class="myVourseCille-registration myVourseCille-form">
+        <header>Sign Up</header>
+        <form action="#">
+          <input type="text" placeholder="Enter your email" />
+          <input type="password" placeholder="Create a password" />
+          <input type="password" placeholder="Confirm your password" />
+          <input type="button" class="button" value="Sign up" />
+        </form>
+        <div class="myVourseCille-form-footer">
+          <span class="login"
+            >Already have an account?
+            <label for="check">Login</label>
+          </span>
+        </div>
+      </div>
+    </main>
+    <footer class="myVourseCille-footer">
+      <div class="myVourseCille-version">Version 0.0.0.1</div>
+      <div class="myVourseCille-text">myCourseVille Parody XD</div>
+    </footer>
+  </body>
 </html>

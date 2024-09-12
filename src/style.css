@@ -1,0 +1,153 @@
+:root {
+  --myBlue: #03468f;
+  --myHoverBlue: #175fac;
+  --myOrange: #f59a23;
+}
+
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+.myVourseCille-body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  flex-direction: column;
+}
+
+.myVourseCille-logo {
+  text-align: center;
+  width: 100%;
+  height: 80px;
+  margin: 16px;
+}
+
+.myVourseCille-logo-img {
+  width: 300px;
+  height: 100%;
+}
+
+/* Main */
+.myVourseCille-main {
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  margin: 16px;
+  padding: 16px;
+}
+
+.myVourseCille-main .myVourseCille-registration {
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+#check:checked ~ .myVourseCille-registration {
+  display: block;
+}
+
+#check:checked ~ .myVourseCille-login {
+  display: none;
+}
+
+.myVourseCille-form header {
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.myVourseCille-form input {
+  height: 60px;
+  width: 100%;
+  padding: 0 16px;
+  font-size: 16px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.myVourseCille-form input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.myVourseCille-form a {
+  font-size: 20px;
+  color: var(--myBlue);
+  text-decoration: none;
+}
+
+.myVourseCille-form a:hover {
+  text-decoration: underline;
+  color: var(--myHoverBlue);
+}
+
+.myVourseCille-form input.button {
+  color: white;
+  background: var(--myBlue);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.myVourseCille-form input.button:hover {
+  background: var(--myHoverBlue);
+}
+
+.myVourseCille-form-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup,
+.login {
+  font-size: 16px;
+}
+.signup label,
+.login label {
+  color: var(--myBlue);
+  cursor: pointer;
+}
+.signup label:hover,
+.login label:hover {
+  text-decoration: underline;
+  color: var(--myHoverBlue);
+}
+
+/* Footer */
+.myVourseCille-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+  margin: 16px;
+}
+
+.myVourseCille-version {
+  background-color: var(--myOrange);
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  display: inline-block;
+  padding: 12px 12px;
+  text-align: center;
+  margin-bottom: 12px;
+}
