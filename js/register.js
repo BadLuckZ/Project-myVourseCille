@@ -34,12 +34,19 @@ register_form.addEventListener("submit", (e) => {
   let email_error = true;
 
   // Email Validation
-  if (emailPattern.test(email)) {
-    showSuccess(register_email_error, register_email);
-    email_error = false;
-  } else {
+  if (!emailPattern.test(email)) {
     showError(register_email_error, register_email, "Invalid Email");
     email_error = true;
+  } else if (emails.includes(email)) {
+    showError(
+      register_email_error,
+      register_email,
+      "This Email has been taken!"
+    );
+    email_error = true;
+  } else {
+    showSuccess(register_email_error, register_email);
+    email_error = false;
   }
 
   const username = register_username.value;
@@ -48,6 +55,13 @@ register_form.addEventListener("submit", (e) => {
   // Username Validation
   if (username == "") {
     showError(register_username_error, register_username, "Invalid Username");
+    username_error = true;
+  } else if (usernames.includes(username)) {
+    showError(
+      register_username_error,
+      register_username,
+      "This username has been taken!"
+    );
     username_error = true;
   } else {
     showSuccess(register_username_error, register_username);
@@ -123,6 +137,14 @@ register_form.addEventListener("submit", (e) => {
     !password_error &&
     !check_password_error
   ) {
+    emails.push(email);
+    usernames.push(username);
+    clearRegisterForm();
+
+    // Go To Login Page
+    document.getElementById("check").checked = false;
+
+    // Create Register Popup
   }
 });
 
