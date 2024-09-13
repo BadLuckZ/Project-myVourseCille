@@ -69,18 +69,22 @@
   margin-bottom: 20px;
 }
 
-.myVourseCille-form input {
+.myVourseCille-form .input {
+  margin-bottom: 12px;
+}
+
+.myVourseCille-form .input input {
   height: 44px;
   width: 100%;
   padding: 0 16px;
+  margin: 4px 0;
   font-size: 20px;
-  margin-bottom: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
 }
 
-.myVourseCille-form input:focus {
+.myVourseCille-form .input input:focus {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -110,21 +114,19 @@
   background: var(--myHoverBlue);
 }
 
-.myVourseCille-form input.error {
+.myVourseCille-form .input input.error {
   border-color: var(--myError);
 }
 
-.myVourseCille-form input.success {
+.myVourseCille-form .input input.success {
   border-color: var(--mySuccess);
 }
 
-#login-error-message,
-#register-error-message {
+.error-message {
   color: var(--myError);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
-  padding: 0 16px;
-  /* visibility: hidden; */
+  display: none;
 }
 
 .myVourseCille-form-footer {

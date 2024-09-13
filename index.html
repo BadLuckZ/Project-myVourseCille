@@ -23,19 +23,26 @@
       <div id="myVourseCille-login" class="myVourseCille-form">
         <header>Login</header>
         <form action="#">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            id="login-email"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Enter your password"
-            id="login-password"
-            required
-          />
-          <div id="login-error-message">Hello!</div>
+          <div class="input">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              id="login-email"
+            />
+            <div id="login-email-error-message" class="error-message">
+              Hello!
+            </div>
+          </div>
+          <div class="input">
+            <input
+              type="password"
+              placeholder="Enter your password"
+              id="login-password"
+            />
+            <div id="login-email-error-message" class="error-message">
+              Hello!
+            </div>
+          </div>
           <button class="button" id="login-button">Login</button>
         </form>
         <div class="myVourseCille-form-footer">
@@ -48,28 +55,50 @@
       <div id="myVourseCille-registration" class="myVourseCille-form">
         <header>Sign Up</header>
         <form action="#">
-          <input
-            type="text"
-            placeholder="Enter your email"
-            id="register-email"
-          />
-          <input
-            type="text"
-            placeholder="Create your username"
-            id="register-username"
-          />
-          <input
-            type="password"
-            placeholder="Create a password"
-            id="register-password"
-          />
-          <input
-            type="password"
-            placeholder="Confirm your password"
-            id="register-checkpassword"
-          />
-          <div id="register-error-message">Hello XD!</div>
-          <button class="button" id="register-button">Sign up</button>
+          <div class="input">
+            <input
+              type="text"
+              placeholder="Enter your email"
+              id="register-email"
+            />
+            <div id="register-email-error-message" class="error-message">
+              Hello XD!
+            </div>
+          </div>
+          <div class="input">
+            <input
+              type="text"
+              placeholder="Create your username"
+              id="register-username"
+            />
+            <div id="register-username-error-message" class="error-message">
+              Hello XD!
+            </div>
+          </div>
+          <div class="input">
+            <input
+              type="password"
+              placeholder="Create a password"
+              id="register-password"
+            />
+            <div id="register-password-error-message" class="error-message">
+              Hello XD!
+            </div>
+          </div>
+          <div class="input">
+            <input
+              type="password"
+              placeholder="Confirm your password"
+              id="register-checkpassword"
+            />
+            <div
+              id="register-confirmpassword-error-message"
+              class="error-message"
+            >
+              Hello XD!
+            </div>
+          </div>
+          <button class="button" id="register-button">Sign Up</button>
         </form>
         <div class="myVourseCille-form-footer">
           <span class="login"
