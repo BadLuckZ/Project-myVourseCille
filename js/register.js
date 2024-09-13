@@ -1,26 +1,3 @@
-// Utility Function
-function showSuccess(error_input, input) {
-  error_input.innerHTML = "";
-  error_input.style.display = "none";
-  input.classList.remove("error");
-  input.classList.add("success");
-}
-
-function showError(error_input, input, msg) {
-  error_input.innerHTML = msg;
-  error_input.style.display = "block";
-  input.classList.add("error");
-  input.classList.remove("success");
-}
-
-function showNormal(error_input, input) {
-  input.value = "";
-  error_input.innerHTML = "";
-  error_input.style.display = "none";
-  input.classList.remove("error");
-  input.classList.remove("success");
-}
-
 function clearRegisterForm() {
   showNormal(register_email_error, register_email);
   showNormal(register_username_error, register_username);
@@ -105,11 +82,11 @@ register_form.addEventListener("submit", (e) => {
       "Password must have at least 1 number"
     );
     password_error = true;
-  } else if (password.length < 8) {
+  } else if (password.length < password_minimum) {
     showError(
       register_password_error,
       register_password,
-      "Password must have at least 8 characters"
+      `Password must have at least ${password_minimum} characters`
     );
     password_error = true;
   } else {
