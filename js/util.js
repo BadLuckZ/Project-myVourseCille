@@ -1,6 +1,4 @@
 const password_minimum = 8;
-const emails = [];
-const usernames = [];
 
 function showSuccess(error_input, input) {
   error_input.innerHTML = "";

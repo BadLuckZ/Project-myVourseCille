@@ -5,6 +5,23 @@ function clearRegisterForm() {
   showNormal(register_checkpassword_error, register_checkpassword);
 }
 
+// Get Data From Storage
+let data;
+let emails;
+let usernames;
+try {
+  const string_data = localStorage.getItem("data");
+  data = JSON.parse(string_data);
+  const string_emails = localStorage.getItem("emails");
+  emails = JSON.parse(string_emails);
+  const string_usernames = localStorage.getItem("usernames");
+  usernames = JSON.parse(string_usernames);
+} catch (err) {
+  data = [];
+  emails = [];
+  usernames = [];
+}
+
 // Register Form
 const register_form = document.getElementById("myVourseCille-registration");
 const register_email = document.getElementById("register-email");
@@ -137,8 +154,19 @@ register_form.addEventListener("submit", (e) => {
     !password_error &&
     !check_password_error
   ) {
+    const newData = {
+      id: data.length + 1,
+      username: username,
+      email: email,
+      password: password,
+    };
+    data.push(newData);
+    localStorage.setItem("data", JSON.stringify(data));
     emails.push(email);
+    localStorage.setItem("emails", JSON.stringify(emails));
     usernames.push(username);
+    localStorage.setItem("usernames", JSON.stringify(usernames));
+
     clearRegisterForm();
 
     // Go To Login Page
