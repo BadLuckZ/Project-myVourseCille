@@ -39,12 +39,49 @@ register_form.addEventListener("submit", (e) => {
   e.preventDefault();
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const email = register_email.value;
+
   const username = register_username.value;
+
+  const hasUppercase = /[A-Z]/;
+  const hasLowercase = /[a-z]/;
+  const hasNumber = /\d/;
   const password = register_password.value;
+
   const checkpassword = register_checkpassword.value;
+
+  // Email Validation
   if (emailPattern.test(email)) {
     showSuccess(register_email_error, register_email);
   } else {
     showError(register_email_error, register_email, "Invalid Email");
+  }
+
+  // Password Validation
+  if (!hasUppercase.test(password)) {
+    showError(
+      register_password_error,
+      register_password,
+      "Password must have at least 1 uppercase letter"
+    );
+  } else if (!hasLowercase.test(password)) {
+    showError(
+      register_password_error,
+      register_password,
+      "Password must have at least 1 lowercase letter"
+    );
+  } else if (!hasNumber.test(password)) {
+    showError(
+      register_password_error,
+      register_password,
+      "Password must have at least 1 number"
+    );
+  } else if (password.length < 8) {
+    showError(
+      register_password_error,
+      register_password,
+      "Password must have at least 8 characters"
+    );
+  } else {
+    showSuccess(register_password_error, register_password);
   }
 });
