@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="icon"
-      href="/images/myVourseCille-icon.png"
+      href="./images/myVourseCille-icon.png"
       type="image/icon type"
     />
     <title>myVourseCille</title>
@@ -14,21 +14,28 @@
   <body class="myVourseCille-body">
     <header class="myVourseCille-logo">
       <img
-        src="/images/myVourseCille-logo.png"
+        src="./images/myVourseCille-logo.png"
         class="myVourseCille-logo-img"
       />
     </header>
     <main class="myVourseCille-main">
       <input type="checkbox" id="check" />
-      <div class="myVourseCille-login myVourseCille-form">
+      <div id="myVourseCille-login" class="myVourseCille-form">
         <header>Login</header>
         <form action="#">
-          <input type="text" placeholder="Enter your email" id="login-email" />
+          <input
+            type="email"
+            placeholder="Enter your email"
+            id="login-email"
+            required
+          />
           <input
             type="password"
             placeholder="Enter your password"
             id="login-password"
+            required
           />
+          <div id="login-error-message">Hello!</div>
           <button class="button" id="login-button">Login</button>
         </form>
         <div class="myVourseCille-form-footer">
@@ -38,7 +45,7 @@
           </span>
         </div>
       </div>
-      <div class="myVourseCille-registration myVourseCille-form">
+      <div id="myVourseCille-registration" class="myVourseCille-form">
         <header>Sign Up</header>
         <form action="#">
           <input
@@ -56,7 +63,12 @@
             placeholder="Create a password"
             id="register-password"
           />
-          <input type="password" placeholder="Confirm your password" />
+          <input
+            type="password"
+            placeholder="Confirm your password"
+            id="register-checkpassword"
+          />
+          <div id="register-error-message">Hello XD!</div>
           <button class="button" id="register-button">Sign up</button>
         </form>
         <div class="myVourseCille-form-footer">
@@ -72,4 +84,5 @@
       <div class="myVourseCille-text">myCourseVille Parody XD</div>
     </footer>
   </body>
+  <script src="script.js"></script>
 </html>

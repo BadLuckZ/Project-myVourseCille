@@ -2,6 +2,8 @@
   --myBlue: #03468f;
   --myHoverBlue: #175fac;
   --myOrange: #f59a23;
+  --myError: #ed4337;
+  --mySuccess: #5cb85c;
 }
 
 * {
@@ -44,7 +46,7 @@
   padding: 16px;
 }
 
-.myVourseCille-main .myVourseCille-registration {
+.myVourseCille-main #myVourseCille-registration {
   display: none;
 }
 
@@ -52,23 +54,23 @@
   display: none;
 }
 
-#check:checked ~ .myVourseCille-registration {
+#check:checked ~ #myVourseCille-registration {
   display: block;
 }
 
-#check:checked ~ .myVourseCille-login {
+#check:checked ~ #myVourseCille-login {
   display: none;
 }
 
 .myVourseCille-form header {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
   text-align: center;
   margin-bottom: 20px;
 }
 
 .myVourseCille-form input {
-  height: 48px;
+  height: 44px;
   width: 100%;
   padding: 0 16px;
   font-size: 20px;
@@ -108,6 +110,23 @@
   background: var(--myHoverBlue);
 }
 
+.myVourseCille-form input.error {
+  border-color: var(--myError);
+}
+
+.myVourseCille-form input.success {
+  border-color: var(--mySuccess);
+}
+
+#login-error-message,
+#register-error-message {
+  color: var(--myError);
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 16px;
+  /* visibility: hidden; */
+}
+
 .myVourseCille-form-footer {
   display: flex;
   justify-content: center;
@@ -116,13 +135,15 @@
 
 .signup,
 .login {
-  font-size: 20px;
+  font-size: 16px;
 }
+
 .signup label,
 .login label {
   color: var(--myBlue);
   cursor: pointer;
 }
+
 .signup label:hover,
 .login label:hover {
   text-decoration: underline;
