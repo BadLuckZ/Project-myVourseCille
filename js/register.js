@@ -9,16 +9,22 @@ function clearRegisterForm() {
 let data;
 let emails;
 let usernames;
-try {
-  const string_data = localStorage.getItem("data");
+const string_data = localStorage.getItem("data");
+if (string_data) {
   data = JSON.parse(string_data);
-  const string_emails = localStorage.getItem("emails");
-  emails = JSON.parse(string_emails);
-  const string_usernames = localStorage.getItem("usernames");
-  usernames = JSON.parse(string_usernames);
-} catch (err) {
+} else {
   data = [];
+}
+const string_emails = localStorage.getItem("emails");
+if (string_emails) {
+  emails = JSON.parse(string_emails);
+} else {
   emails = [];
+}
+const string_usernames = localStorage.getItem("usernames");
+if (string_usernames) {
+  usernames = JSON.parse(string_usernames);
+} else {
   usernames = [];
 }
 
