@@ -13,6 +13,21 @@ function showError(error_input, input, msg) {
   input.classList.remove("success");
 }
 
+function showNormal(error_input, input) {
+  input.value = "";
+  error_input.innerHTML = "";
+  error_input.style.display = "none";
+  input.classList.remove("error");
+  input.classList.remove("success");
+}
+
+function clearRegisterForm() {
+  showNormal(register_email_error, register_email);
+  showNormal(register_username_error, register_username);
+  showNormal(register_password_error, register_password);
+  showNormal(register_checkpassword_error, register_checkpassword);
+}
+
 // Register Form
 const register_form = document.getElementById("myVourseCille-registration");
 const register_email = document.getElementById("register-email");
@@ -53,6 +68,7 @@ register_form.addEventListener("submit", (e) => {
   const username = register_username.value;
   let username_error = false;
 
+  // Username Validation
   if (username == "") {
     showError(register_username_error, register_username, "Invalid Username");
     username_error = true;
@@ -123,4 +139,18 @@ register_form.addEventListener("submit", (e) => {
     showSuccess(register_checkpassword_error, register_checkpassword);
     check_password_error = false;
   }
+
+  if (
+    !email_error &&
+    !username_error &&
+    !password_error &&
+    !check_password_error
+  ) {
+  }
+});
+
+// Go To Login Button
+const goto_login_button = document.getElementById("goto-login-btn");
+goto_login_button.addEventListener("click", () => {
+  clearRegisterForm();
 });
