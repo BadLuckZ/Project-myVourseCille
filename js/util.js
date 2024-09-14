@@ -1,4 +1,7 @@
 const password_minimum = 8;
+const milli_time_popup_show = 3000;
+const popup_top = 20;
+const additional_top = 80;
 
 function showSuccess(error_input, input) {
   input.classList.remove("error");

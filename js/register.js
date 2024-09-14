@@ -5,6 +5,38 @@ function clearRegisterForm() {
   showNormal(register_checkpassword_error, register_checkpassword);
 }
 
+let popupCount = 0;
+
+function showPopup() {
+  const popup = document.createElement("div");
+  popup.classList.add("popup");
+  popup.id = "popup" + popupCount;
+  popup.innerHTML = `Registration Successful!`;
+  document.body.appendChild(popup);
+  const all_popups = document.querySelectorAll(".popup.show");
+  all_popups.forEach((p) => {
+    const current_top = parseInt(p.style.top || 0);
+    p.style.top = `${current_top + additional_top}px`;
+  });
+
+  popup.style.top = `${popup_top}px`;
+
+  setTimeout(() => {
+    popup.classList.add("show");
+  }, 100);
+
+  setTimeout(() => {
+    popup.classList.remove("show");
+    popup.classList.add("hide");
+  }, milli_time_popup_show);
+
+  setTimeout(() => {
+    document.body.removeChild(popup);
+  }, milli_time_popup_show + 1000);
+
+  popupCount++;
+}
+
 // Get Data From Storage
 let data;
 let emails;
@@ -174,11 +206,8 @@ register_form.addEventListener("submit", (e) => {
     localStorage.setItem("usernames", JSON.stringify(usernames));
 
     clearRegisterForm();
-
-    // Go To Login Page
+    showPopup();
     document.getElementById("check").checked = false;
-
-    // Create Register Popup
   }
 });
 
